@@ -263,9 +263,9 @@ public class MainController implements Initializable, Serializable {
 		currentlogin.setText("");
 		DecimalFormat df = new DecimalFormat("#.##");
 
-		String url = "E:\\Images\\517715d323d91c7a93be977398c6fd2a.png";
+		String url = "C:\\517715d323d91c7a93be977398c6fd2a.png";
 		File photo = new File(url);
-		String url2 = "E:\\Images\\aldopng.png";
+		String url2 = "C:\\aldopng.png";
 		File photo2 = new File(url2);
 		Student dany = new Student("Targaryen", "Daenerys", "03/02/283", new Image(photo.toURI().toString()));
 		Student aldo = new Student("Cat", "Aldo", "03/02/1983", new Image(photo2.toURI().toString()));
