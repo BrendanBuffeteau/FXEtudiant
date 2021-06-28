@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="mainpane" prefHeight="589.0" prefWidth="771.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <TabPane fx:id="tabpane" layoutX="14.0" layoutY="57.0" prefHeight="532.0" prefWidth="771.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0">
+        <tabs>
+          <Tab fx:id="logintab" closable="false" text="Login">
+            <content>
+              <AnchorPane fx:id="loginpane" minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="593.0">
+                     <children>
+                        <Text fx:id="loginlabel" layoutX="249.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+                        <TextField fx:id="logininput" layoutX="323.0" layoutY="143.0" />
+                        <Text fx:id="mdplabel" layoutX="222.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" textAlignment="RIGHT" />
+                        <PasswordField fx:id="passwordinput" layoutX="324.0" layoutY="206.0" onAction="#login" />
+                        <Button fx:id="loginconfirm" layoutX="333.0" layoutY="268.0" mnemonicParsing="false" onAction="#login" text="Se connecter" />
+                        <Text layoutX="289.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Portail de connexion" textAlignment="CENTER" wrappingWidth="192.615234375">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Label layoutX="338.0" layoutY="107.0" prefHeight="21.0" prefWidth="97.0" text="admin / mdp" />
+                     </children>
+                 </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="creatab" closable="false" text="Création étudiant">
+               <content>
+                  <AnchorPane fx:id="creapane" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text fx:id="crealabel1" layoutX="173.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="120.0" />
+                        <TextField fx:id="creanom" layoutX="293.0" layoutY="110.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="crealabel2" layoutX="173.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="120.0" />
+                        <TextField fx:id="creaprenom" layoutX="293.0" layoutY="160.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="crealabel3" layoutX="156.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance" wrappingWidth="120.0" />
+                        <Button fx:id="creareset" layoutX="328.0" layoutY="372.0" mnemonicParsing="false" onAction="#resetCrea" text="Réinitialiser les champs" />
+                        <TextField fx:id="creaddn" layoutX="293.0" layoutY="208.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="crealabel31" layoutX="173.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Photo" wrappingWidth="120.0" />
+                        <TilePane fx:id="photopane" layoutX="564.0" layoutY="111.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="129.0" prefWidth="129.0">
+                           <children>
+                              <ImageView fx:id="photoprev" fitHeight="132.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </TilePane>
+                        <TextField fx:id="photopath" layoutX="293.0" layoutY="259.0" onAction="#browsephotostring" prefHeight="31.0" prefWidth="302.0" />
+                        <Button fx:id="photochoix" layoutX="608.0" layoutY="259.0" mnemonicParsing="false" onAction="#browsephoto" prefHeight="31.0" prefWidth="116.0" text="Choisir photo" />
+                        <Button fx:id="creaconfirm" layoutX="386.0" layoutY="323.0" mnemonicParsing="false" onAction="#ajouterEtudiant" text="Créer" />
+                        <Text layoutX="290.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Création étudiant" textAlignment="CENTER" wrappingWidth="192.615234375">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+            <Tab fx:id="modiftab" closable="false" text="Modifier étudiant">
+               <content>
+                  <AnchorPane fx:id="modifphoto" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="302.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Modification étudiant" textAlignment="CENTER" wrappingWidth="208.89404296875">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="crealabel11" layoutX="139.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom" wrappingWidth="120.0" />
+                        <TextField fx:id="modifnom" layoutX="291.0" layoutY="164.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="crealabel21" layoutX="139.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom" wrappingWidth="120.0" />
+                        <TextField fx:id="modifprenom" layoutX="291.0" layoutY="214.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="crealabel31" layoutX="139.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de naissance" wrappingWidth="120.0" />
+                        <Button fx:id="modifbutton" layoutX="291.0" layoutY="375.0" mnemonicParsing="false" onAction="#modifactivate" text="Modifier élève" />
+                        <TextField fx:id="modifddn" layoutX="291.0" layoutY="262.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="crealabel311" layoutX="139.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Photo" wrappingWidth="120.0" />
+                        <TilePane fx:id="modifphotopane" layoutX="562.0" layoutY="165.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="129.0" prefWidth="129.0">
+                           <children>
+                              <ImageView fx:id="modifphotoprev" fitHeight="132.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </TilePane>
+                        <TextField fx:id="modifphotopath" layoutX="291.0" layoutY="313.0" onAction="#browsephotostring" prefHeight="31.0" prefWidth="302.0" />
+                        <Button fx:id="modifphotochoix" layoutX="606.0" layoutY="313.0" mnemonicParsing="false" onAction="#modifBrowsephoto" prefHeight="31.0" prefWidth="116.0" text="Choisir photo" />
+                        <ComboBox fx:id="modifcombo" layoutX="291.0" layoutY="105.0" onAction="#modifChoixEleve" prefHeight="31.0" prefWidth="260.0" promptText="Sélectionnez un élève" />
+                        <Text layoutX="138.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choix de l'élève" wrappingWidth="122.20947265625" />
+                        <Button fx:id="modifsavebutton" layoutX="429.0" layoutY="375.0" mnemonicParsing="false" onAction="#modifconfirm" text="Enregistrer" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="listetab" closable="false" text="Liste étudiants">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" layoutY="31.0" prefHeight="463.0" prefWidth="771.0" />
+                        <Label layoutX="195.0" prefHeight="31.0" prefWidth="382.0" text="Double-cliquez sur la ligne de l'étudiant pour le modifier" textAlignment="CENTER" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab fx:id="notestab" closable="false" text="Ajouter Notes">
+               <content>
+                  <AnchorPane fx:id="notepane" minHeight="0.0" minWidth="0.0" prefHeight="368.0" prefWidth="593.0">
+                     <children>
+                        <Text layoutX="227.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saisir id étudiant" wrappingWidth="114.20947265625" />
+                        <Text fx:id="opelabel1" layoutX="224.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 1 :" textAlignment="CENTER" wrappingWidth="120.0" />
+                        <Label fx:id="notenometudiant" layoutX="353.0" layoutY="102.0" prefHeight="21.0" prefWidth="348.0" />
+                        <TextField fx:id="noteinput1" layoutX="384.0" layoutY="146.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="opelabel2" layoutX="224.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 2 :" textAlignment="CENTER" wrappingWidth="120.0" />
+                        <TextField fx:id="noteinput2" layoutX="384.0" layoutY="196.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="opelabel3" layoutX="224.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 3 :" textAlignment="CENTER" wrappingWidth="120.0" />
+                        <TextField fx:id="noteinput3" layoutX="384.0" layoutY="246.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Text fx:id="opelabel4" layoutX="224.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Note 4 :" textAlignment="CENTER" wrappingWidth="120.0" />
+                        <TextField fx:id="noteinput4" layoutX="384.0" layoutY="296.0" prefHeight="30.0" prefWidth="230.0" />
+                        <Button fx:id="noteaddnotes" layoutX="326.0" layoutY="362.0" mnemonicParsing="false" onAction="#noteAjouterNotes" text="Ajouter les notes à l'étudiant" />
+                        <TextField fx:id="noteidinput" layoutX="380.0" layoutY="50.0" onAction="#noteIdConfirm" prefHeight="31.0" prefWidth="139.0" />
+                        <Button fx:id="noteidconfirm" layoutX="527.0" layoutY="50.0" mnemonicParsing="false" onAction="#noteIdConfirm" prefHeight="31.0" prefWidth="87.0" text="Valider" />
+                        <Label fx:id="notenometudiant1" layoutX="255.0" layoutY="102.0" prefHeight="21.0" prefWidth="71.0" text="Etudiant : " />
+                        <Label fx:id="noteidactuel" layoutX="638.0" layoutY="54.0" prefHeight="21.0" prefWidth="71.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Pane fx:id="header" prefHeight="59.0" prefWidth="771.0">
+         <children>
+            <Label layoutX="273.0" layoutY="10.0" text="Gestion étudiants">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label fx:id="actuallogin" layoutX="14.0" layoutY="16.0" text="Login actuel :">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="currentlogin" layoutX="126.0" layoutY="16.0" prefHeight="27.0" prefWidth="114.0" text="-déconnecté-">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="disconnect" layoutX="634.0" layoutY="14.0" mnemonicParsing="false" onAction="#disconnect" text="Se déconnecter" />
+         </children></Pane>
+   </children>
+</AnchorPane>
